@@ -6,21 +6,57 @@
 {% block content %}
 <div class="container">
     <div class="row">
-        <div class="col-md-6">
-            <form class="form-inline ml-auto">
-                <div class="form-group mb-2">
-                    <input type="text" class="form-control" id="searchBox" placeholder="Buscar">
+        <div class="col-md-12">
+            <ul class="nav nav-tabs" id="myTabs">
+                <li class="nav-item">
+                    <a class="nav-link active" id="lista-tab" data-toggle="tab" href="#lista">Lista</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="editarLista-tab" data-toggle="tab" href="#editarLista">Editar Lista</a>
+                </li>
+            </ul>
+
+            <div class="tab-content mt-3">
+                <div class="tab-pane fade show active" id="lista">
+                    <!-- Conteúdo da aba "Lista" -->
+                    <div class="row">
+                        <div class="col-md-6">
+                            <form class="form-inline ml-auto">
+                                <div class="form-group mb-2">
+                                    <input type="text" class="form-control" id="searchBox" placeholder="Buscar">
+                                </div>
+                                <button type="button" class="btn btn-primary mb-2" onclick="searchList()">Buscar</button>
+                            </form>
+                        </div>
+                    </div>
+
+                    <ul id="shoppingList" class="list-group mt-3">
+                        {% for item in items %}
+                        <li class="list-group-item">{{ item }}</li>
+                        {% endfor %}
+                    </ul>
                 </div>
-                <button type="button" class="btn btn-primary mb-2" onclick="searchList()">Buscar</button>
-            </form>
+                <div class="tab-pane fade" id="editarLista">
+                    <!-- Conteúdo da aba "Editar Lista" -->
+                    <div class="row">
+                        <div class="col-md-6">
+                            <form id="addItemForm">
+                                <div class="form-group">
+                                    <label for="itemName">Nome:</label>
+                                    <input type="text" class="form-control" id="itemName" placeholder="Nome do item">
+                                </div>
+                                <div class="form-group">
+                                    <label for="itemQuantity">Quantidade:</label>
+                                    <input type="number" class="form-control" id="itemQuantity" placeholder="Quantidade">
+                                </div>
+                                <button type="button" class="btn btn-success" onclick="addItemToList()">Adicionar</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
-
-    <ul id="shoppingList" class="list-group mt-3">
-        {% for item in items %}
-        <li class="list-group-item">{{ item }}</li>
-        {% endfor %}
-    </ul>
 </div>
 
 {% endblock %}
