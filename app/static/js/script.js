@@ -41,3 +41,9 @@ function addItemToList() {
         alert('Por favor, preencha todos os campos.');
     }
 }
+
+$(document).ready(function(){
+    $('.nav-tabs a').click(function(){
+        $(this).tab('show');
+    });
+});
