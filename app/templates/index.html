@@ -4,41 +4,23 @@
 {% block header %}{{ title }}{% endblock %}
 
 {% block content %}
-    <div class="container">
-        <div class="row">
-            <div class="col-md-6">
-                <form class="form-inline">
-                    <div class="form-group mb-2">
-                        <input type="text" class="form-control" id="searchBox" placeholder="Buscar">
-                    </div>
-                    <button type="button" class="btn btn-primary mb-2" onclick="searchList()">Buscar</button>
-                </form>
-            </div>
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <form class="form-inline ml-auto">
+                <div class="form-group mb-2">
+                    <input type="text" class="form-control" id="searchBox" placeholder="Buscar">
+                </div>
+                <button type="button" class="btn btn-primary mb-2" onclick="searchList()">Buscar</button>
+            </form>
         </div>
-
-        <ul id="shoppingList" class="list-group mt-3">
-            {% for item in items %}
-                <li class="list-group-item">{{ item }}</li>
-            {% endfor %}
-        </ul>
     </div>
 
-    <script>
-        function searchList() {
-            var input, filter, ul, li, i, txtValue;
-            input = document.getElementById('searchBox');
-            filter = input.value.toUpperCase();
-            ul = document.getElementById('shoppingList');
-            li = ul.getElementsByTagName('li');
+    <ul id="shoppingList" class="list-group mt-3">
+        {% for item in items %}
+        <li class="list-group-item">{{ item }}</li>
+        {% endfor %}
+    </ul>
+</div>
 
-            for (i = 0; i < li.length; i++) {
-                txtValue = li[i].textContent || li[i].innerText;
-                if (txtValue.toUpperCase().indexOf(filter) > -1) {
-                    li[i].style.display = '';
-                } else {
-                    li[i].style.display = 'none';
-                }
-            }
-        }
-    </script>
 {% endblock %}

@@ -14,3 +14,9 @@ function searchList() {
         }
     }
 }
+
+
+document.getElementById('searchBox').addEventListener('submit', function(event) {
+    event.preventDefault();
+    searchList();
+});
