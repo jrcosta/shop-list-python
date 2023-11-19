@@ -38,6 +38,6 @@ Isso instalará as dependências e iniciará o aplicativo.
 Contribuições são bem-vindas! Sinta-se à vontade para abrir problemas ou enviar pull requests.
 
 ## Licença
-Este projeto é licenciado sob a Licença Apache 2.0. Consulte o arquivo LICENSE para obter detalhes.
+Este projeto é licenciado sob a Licença Apache 2.0. Consulte o arquivo [LICENSE](LICENSE) para obter detalhes.
 
 Divirta-se! 🚀
