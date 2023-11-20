@@ -16,7 +16,7 @@ Bem-vindo ao meu aplicativo de lista de compras! Este aplicativo foi desenvolvid
 
 2. **Navegue até o diretório do projeto:**
     ```bash
-   cd meu-app-lista-compras
+   cd shop-list-python
 
 3. **Execute o script de instalação:** 
     ```bash
