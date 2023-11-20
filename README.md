@@ -1,6 +1,6 @@
 # Meu App Lista de Compras
 
-Bem-vindo ao meu aplicativo de lista de compras! Este aplicativo foi desenvolvido em Python usando o framework Flask. Aqui estão as instruções para configurar e executar localmente.
+Bem-vindo ao meu aplicativo de lista de compras! Este aplicativo foi desenvolvido para estudo de Python usando o framework Flask. Aqui estão as instruções para configurar e executar localmente.
 
 ## Pré-requisitos
 
