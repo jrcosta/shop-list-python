@@ -21,7 +21,8 @@ Bem-vindo ao meu aplicativo de lista de compras! Este aplicativo foi desenvolvid
 3. **Execute o script de instalação:** 
     ```bash
    ./setup.sh
-Isso instalará as dependências e iniciará o aplicativo.
+    ```
+   - Isso instalará as dependências e iniciará o aplicativo.
 
 4. **Acesse o aplicativo em http://127.0.0.1:5000/ no seu navegador.**
 
