@@ -43,11 +43,11 @@
                             <form id="addItemForm">
                                 <div class="form-group">
                                     <label for="itemName">Nome:</label>
-                                    <input type="text" class="form-control" id="itemName" placeholder="Nome do item">
+                                    <input type="text" class="form-control" id="itemName" placeholder="Nome do item" oninput="truncateInput(this, 15)">
                                 </div>
                                 <div class="form-group">
                                     <label for="itemQuantity">Quantidade:</label>
-                                    <input type="number" class="form-control" id="itemQuantity" placeholder="Quantidade">
+                                    <input type="number" class="form-control" id="itemQuantity" placeholder="Quantidade" oninput="truncateInput(this, 4)">
                                 </div>
                                 <button type="button" class="btn btn-success" onclick="addItemToList()">Adicionar</button>
                             </form>

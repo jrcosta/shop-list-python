@@ -1,12 +1,14 @@
+/**
+ * Searches the shopping list based on the input value and filters the displayed items.
+ */
 function searchList() {
-    var input, filter, ul, li, i, txtValue;
-    input = document.getElementById('searchBox');
-    filter = input.value.toUpperCase();
-    ul = document.getElementById('shoppingList');
-    li = ul.getElementsByTagName('li');
+    var input = document.getElementById('searchBox');
+    var filter = input.value.toUpperCase();
+    var ul = document.getElementById('shoppingList');
+    var li = ul.getElementsByTagName('li');
 
-    for (i = 0; i < li.length; i++) {
-        txtValue = li[i].textContent || li[i].innerText;
+    for (var i = 0; i < li.length; i++) {
+        var txtValue = li[i].textContent || li[i].innerText;
         if (txtValue.toUpperCase().indexOf(filter) > -1) {
             li[i].style.display = '';
         } else {
@@ -15,26 +17,25 @@ function searchList() {
     }
 }
 
-
 document.getElementById('searchBox').addEventListener('submit', function (event) {
     event.preventDefault();
     searchList();
 });
 
+/**
+ * Adds an item to the shopping list.
+ */
 function addItemToList() {
     var itemName = document.getElementById('itemName').value;
     var itemQuantity = document.getElementById('itemQuantity').value;
 
-    // Validar se os campos estão preenchidos
-    if (itemName && itemQuantity) {
-        // Adicionar o item à lista
+    if (itemName && itemQuantity && itemQuantity > 0) {
         var shoppingList = document.getElementById('shoppingList');
         var listItem = document.createElement('li');
         listItem.className = 'list-group-item';
         listItem.textContent = itemName + ' - Quantidade: ' + itemQuantity;
         shoppingList.appendChild(listItem);
 
-        // Limpar os campos do formulário
         document.getElementById('itemName').value = '';
         document.getElementById('itemQuantity').value = '';
     } else {
@@ -47,3 +48,15 @@ $(document).ready(function(){
         $(this).tab('show');
     });
 });
+
+/**
+ * Truncates the value of an input if it exceeds the maximum length.
+ *
+ * @param {HTMLInputElement} input - The input element.
+ * @param {number} maxLength - The maximum length allowed for the input value.
+ */
+function truncateInput(input, maxLength) {
+    if (input.value.length > maxLength) {
+        input.value = input.value.slice(0, maxLength);
+    }
+}
